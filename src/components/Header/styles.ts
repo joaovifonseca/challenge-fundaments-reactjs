@@ -23,13 +23,24 @@ export const Container = styled.div<ContainerProps>`
         font-size: 16px;
         transition: opacity 0.2s;
 
+
+
         & + a {
           margin-left: 32px;
+          padding-bottom: ${({ size }) => (size === 'small' ? '10px' : '')};
+          border-bottom: ${({ size }) =>
+            size === 'small' ? '2px solid #FF872C' : ''};
         }
 
         &:hover {
           opacity: 0.6;
         }
+      }
+
+      a:first-child {
+        padding-bottom: ${({ size }) => (size === 'large' ? '10px' : '')};
+        border-bottom: ${({ size }) =>
+          size === 'large' ? '2px solid #FF872C' : ''};
       }
     }
   }
